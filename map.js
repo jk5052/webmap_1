@@ -1,7 +1,7 @@
 'use strict'
 console.log('Loaded map.js')
 
-// 여기 본인의 Mapbox Access Token을 입력
+// 본인의 Mapbox 토큰 입력
 mapboxgl.accessToken = 'pk.eyJ1IjoiamF5Y2VrIiwiYSI6ImNtYzBqc2ljbzAzOHgybW9kNHdneHRtazUifQ.mw-ealCPL1h6YPedUhlKBg'
 
 var map = new mapboxgl.Map({
@@ -11,9 +11,9 @@ var map = new mapboxgl.Map({
   zoom: 13.75
 });
 
-// GeoJSON 데이터 URL
-var blocks_url = "./data/blocks_joined_trees_um.geojson";
-var trees_url = "./data/2015_Street_Tree_Census_subset_um.geojson";
+// GitHub Pages의 절대 경로를 이용한 URL
+var blocks_url = "https://jk5052.github.io/webmap_1/data/blocks_joined_trees_um.geojson";
+var trees_url = "https://jk5052.github.io/webmap_1/data/2015_Street_Tree_Census_subset_um.geojson";
 
 // 데이터 로드 및 레이어 추가
 map.on('load', function() {
@@ -66,7 +66,7 @@ map.on('load', function() {
 
 });
 
-// 나무 클릭시 팝업으로 종 이름 표시
+// 나무 클릭 시 팝업으로 종 이름 표시
 map.on('click', 'trees', function(e) {
   var coordinates = e.features[0].geometry.coordinates.slice();
   var species = e.features[0].properties.spc_common;
@@ -86,3 +86,4 @@ map.on('mouseenter', 'trees', function() {
 map.on('mouseleave', 'trees', function() {
   map.getCanvas().style.cursor = '';
 });
+
