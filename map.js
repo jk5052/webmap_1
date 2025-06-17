@@ -2,7 +2,7 @@
 console.log('Loaded map.js')
 
 // 본인의 Mapbox 토큰 입력
-mapboxgl.accessToken = 'pk.eyJ1IjoiamF5Y2VrIiwiYSI6ImNtYzBqc2ljbzAzOHgybW9kNHdneHRtazUifQ.mw-ealCPL1h6YPedUhlKBg'
+mapboxgl.accessToken = 'pk.eyJ1IjoiamF5Y2VrIiwiYSI6ImNtYzB0N2RsdzA2MXgya3IzbGM1OTg0bTMifQ.2iyCIDuQTc7gkqtgG6f3Ew'
 
 var map = new mapboxgl.Map({
   container: 'map',
